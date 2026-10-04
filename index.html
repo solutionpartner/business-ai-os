@@ -34,6 +34,22 @@ tailwind.config = {
   ::selection { background:#E7C47D; color:#0B1D32; }
   .fade-in { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
   .fade-in.vis { opacity:1; transform:none; }
+  /* Anims: comptadors pugen, barres omplen, gauges giren, punts parpellegen */
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.35} }
+  .pulse-dot { animation:pulse-dot 1.6s ease-in-out infinite; }
+  .gauge { --p:0; --c:#E7C47D; position:relative; width:74px; height:74px; border-radius:50%;
+    background: conic-gradient(var(--c) calc(var(--p)*1%), #E3E8F0 0);
+    display:grid; place-items:center; transition:--p 1.4s ease; }
+  .gauge::before { content:""; position:absolute; inset:8px; border-radius:50%; background:#fff; }
+  .gauge b { position:relative; z-index:1; font-size:15px; color:#0B1D32; font-weight:700; }
+  .gauge-outer { display:inline-grid; justify-items:center; gap:6px; }
+  .gauge-outer .lbl { font-size:11px; color:#14243A; font-weight:600; }
+  .bar { height:8px; border-radius:6px; background:#E3E8F0; overflow:hidden; }
+  .bar i { display:block; height:100%; width:0; border-radius:6px;
+    background:linear-gradient(90deg,#E7C47D,#C9A45C); transition:width 1.3s ease; }
+  .bar-outer { display:grid; gap:5px; }
+  .bar-outer .bar-info { display:flex; justify-content:space-between; font-size:12px; color:#14243A; font-weight:600; }
+  .spark-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#E7C47D; }
 </style>
 </head>
 <body class="bg-white text-ink font-sans overflow-x-hidden">
@@ -49,6 +65,7 @@ tailwind.config = {
       <a href="#processos" class="hover:text-gold transition">Processos</a>
       <a href="#nivells" class="hover:text-gold transition">Nivells</a>
       <a href="#connexions" class="hover:text-gold transition">Connexions</a>
+      <a href="#govern" class="hover:text-gold transition">Govern</a>
     </div>
     <a href="#cta" class="inline-flex items-center gap-2 rounded-lg bg-gold text-night text-sm font-bold px-4 py-2 hover:bg-gold-deep transition">
       Diagnòstic gratuït
@@ -243,6 +260,45 @@ tailwind.config = {
       </div>
     </div>
     <p class="mt-8 text-center text-ink/60 italic fade-in">Amb el context ben muntat, l'eina passa a ser el de menys.</p>
+
+    <!-- Panell de mètriques animades (mock del producte) -->
+    <div class="mt-14 rounded-3xl border border-silver bg-white p-8 md:p-10 shadow-sm fade-in">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <div class="text-gold-deep text-xs font-bold tracking-widest uppercase">El teu AIOS, en xifres</div>
+          <h3 class="font-display text-2xl font-bold text-night mt-1">Ho veus tot d'un cop.</h3>
+        </div>
+        <div class="flex items-center gap-2 text-xs text-ink/50 rounded-full border border-silver px-3 py-1"><span class="spark-dot pulse-dot"></span> El sistema treballa</div>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Gauge: automatització -->
+        <div class="gauge-outer">
+          <div class="gauge" data-p="78"><b>78%</b></div>
+          <div class="lbl">Processos automatitzats</div>
+        </div>
+        <!-- Gauge: hores estalviades -->
+        <div class="gauge-outer">
+          <div class="gauge" data-p="64"><b>−64%</b></div>
+          <div class="lbl">Temps en rutines</div>
+        </div>
+        <!-- Barres: canal d'atenció -->
+        <div class="lg:col-span-2 grid content-center gap-5">
+          <div class="bar-outer">
+            <div class="bar-info"><span>Vendes gestionades per IA</span><span class="bar-val" data-v="92">0%</span></div>
+            <div class="bar"><i data-w="92"></i></div>
+          </div>
+          <div class="bar-outer">
+            <div class="bar-info"><span>Consultes ateses en menys de 1 min</span><span class="bar-val" data-v="81">0%</span></div>
+            <div class="bar"><i data-w="81"></i></div>
+          </div>
+          <div class="bar-outer">
+            <div class="bar-info"><span>Dades sense errors (font única)</span><span class="bar-val" data-v="99">0%</span></div>
+            <div class="bar"><i data-w="99"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -352,11 +408,97 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ═══════════ 06 AMB TU / FASES ═══════════ -->
+<!-- ═══════════ 06 GOVERN / QUI EL CONTROLA ═══════════ -->
+<section id="govern" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto fade-in">
+      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">06 · Govern</span>
+      <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold text-night">Qui controla el teu AIOS.</h2>
+      <p class="mt-4 text-ink/70 text-lg">No és un agent sol. És una cadena: agents que supervisen agents que controlen fluxos. Cada un amb les seves ordres, i res no s'executa sense permís.</p>
+    </div>
+
+    <!-- Diagrama de jerarquia animat -->
+    <div class="mt-14 relative fade-in">
+      <!-- línia vertebral -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/50 via-gold/30 to-transparent -translate-x-1/2 hidden md:block"></div>
+
+      <div class="grid gap-6 md:gap-10 max-w-3xl mx-auto relative">
+        <!-- Optimus: el supervisor -->
+        <div class="relative flex flex-col items-center text-center">
+          <div class="rounded-2xl bg-night text-white px-8 py-5 shadow-xl ring-1 ring-gold/50 relative z-10 hover:-translate-y-1 transition duration-300">
+            <div class="text-[10px] tracking-widest uppercase text-gold">Supervisor · OptimusPrime</div>
+            <div class="font-display text-xl font-bold mt-1">El cap que ho governa tot</div>
+            <div class="text-white/60 text-xs mt-1">Nivell de decisió · res no s'executa sense el seu vistiplau</div>
+          </div>
+          <div class="h-6 w-px bg-gold/40 hidden md:block"></div>
+        </div>
+
+        <!-- Argon: els caps per client / àrea -->
+        <div class="grid md:grid-cols-3 gap-4 text-center">
+          <div class="flex flex-col items-center">
+            <div class="h-6 w-px bg-gold/40 hidden md:block"></div>
+            <div class="rounded-xl bg-cream border border-gold/40 px-4 py-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-300 w-full">
+              <div class="text-gold-deep font-bold">Argon</div>
+              <div class="font-semibold text-night text-sm">CEO IA · per client</div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="h-6 w-px bg-gold/40 hidden md:block"></div>
+            <div class="rounded-xl bg-cream border border-gold/40 px-4 py-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-300 w-full">
+              <div class="text-gold-deep font-bold">Argon</div>
+              <div class="font-semibold text-night text-sm">CEO IA · per àrea</div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="h-6 w-px bg-gold/40 hidden md:block"></div>
+            <div class="rounded-xl bg-cream border border-gold/40 px-4 py-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-300 w-full">
+              <div class="text-gold-deep font-bold">Argon</div>
+              <div class="font-semibold text-night text-sm">Agents de l'equip</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center"><div class="h-6 w-px bg-gold/40 hidden md:block"></div></div>
+
+        <!-- Fluxos / rutines / connectors -->
+        <div class="grid md:grid-cols-3 gap-4 text-center">
+          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Fluxos n8n</div>
+          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Rutines &amp; crons</div>
+          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Connectors i eines</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- El flux de govern: proposat → aprovat → executat -->
+    <div class="mt-14 rounded-3xl bg-cream border border-silver p-8 md:p-10 fade-in">
+      <h3 class="font-display text-2xl font-bold text-night text-center">La regla d'or: res sense permís.</h3>
+      <p class="mt-2 text-center text-ink/65 text-lg">Cada acció passa per una cadena d'aprovació abans d'executar-se.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-4 items-stretch">
+        <div class="rounded-2xl bg-white border border-silver p-5 text-center">
+          <div class="text-gold-deep font-display text-2xl font-extrabold">1</div>
+          <div class="font-bold text-night mt-1">Proposat</div>
+          <p class="text-ink/55 text-xs mt-1">L'agent ho prepara i demana permís.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-silver p-5 text-center">
+          <div class="text-gold-deep font-display text-2xl font-extrabold">2</div>
+          <div class="font-bold text-night mt-1">Aprovat</div>
+          <p class="text-ink/55 text-xs mt-1">El supervisor ho revisa i ho autoritza.</p>
+        </div>
+        <div class="rounded-2xl bg-night text-white p-5 text-center shadow-xl">
+          <div class="text-gold font-display text-2xl font-extrabold">3</div>
+          <div class="font-bold mt-1">Executat</div>
+          <p class="text-white/55 text-xs mt-1">Només llavors passa de veritat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 07 AMB TU / FASES ═══════════ -->
 <section id="fases" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-2xl fade-in">
-      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">06 · Amb tu</span>
+      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">07 · Amb tu</span>
       <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold text-night">Com construïm el teu AIOS.</h2>
     </div>
     <div class="mt-12 grid md:grid-cols-2 gap-5">
@@ -411,6 +553,24 @@ const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target);} });
 },{threshold:0.12});
 document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+// Anima gauges i barres quan entren en pantalla
+const meteo = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const root = entry.target;
+    root.querySelectorAll('.gauge').forEach(g=>{ g.style.setProperty('--p', g.dataset.p||'0'); });
+    root.querySelectorAll('.bar i').forEach(b=>{ b.style.width = (b.dataset.w||'0')+'%'; });
+    root.querySelectorAll('.bar-val').forEach(v=>{
+      const target = parseInt(v.dataset.v||'0',10);
+      let cur = 0;
+      const step = target>50? 3:2;
+      const t = setInterval(()=>{ cur=Math.min(cur+step,target); v.textContent=cur+'%'; if(cur>=target) clearInterval(t); },28);
+    });
+    meteo.unobserve(root);
+  });
+},{threshold:0.35});
+document.querySelectorAll('.gauge-outer, .lg\\:col-span-2.grid').forEach(el=>meteo.observe(el));
 </script>
 </body>
 </html>
