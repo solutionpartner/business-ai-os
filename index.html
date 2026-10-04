@@ -237,6 +237,10 @@ tailwind.config = {
       <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">02 · L'AIOS</span>
       <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold text-night">No és un panell. És una conversa.</h2>
       <p class="mt-4 text-ink/70 text-lg">El teu sistema operatiu d'IA viu dins d'un xat. Des d'allà demanes, consultes i delegues, i l'agent orquestra tot el negoci per sota.</p>
+      <p class="mt-3 inline-flex items-start gap-2 rounded-xl bg-white border border-silver px-4 py-3 text-sm text-ink/70">
+        <span class="text-gold-deep font-bold shrink-0">AIOS</span>
+        <span>= el teu <b>Sistema Operatiu d'Intel·ligència Artificial</b>. Igual que l'Android organitza el mòbil, l'AIOS organitza el teu negoci: posa ordre, connecta tot el que fas servir i deixa que la IA treballi per a tu.</span>
+      </p>
     </div>
     <div class="mt-12 grid md:grid-cols-2 gap-6">
       <div class="fade-in rounded-2xl bg-night text-white p-8 flex flex-col">
@@ -483,8 +487,8 @@ tailwind.config = {
 
         <!-- Fluxos / rutines / connectors -->
         <div class="grid md:grid-cols-3 gap-4 text-center">
-          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Fluxos n8n</div>
-          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Rutines &amp; crons</div>
+          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Fluxos automàtics</div>
+          <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Rutines programades</div>
           <div class="rounded-xl bg-night text-white px-4 py-3 text-sm hover:bg-ink transition"><span class="text-gold">⚡</span> Connectors i eines</div>
         </div>
       </div>
@@ -549,7 +553,7 @@ tailwind.config = {
           <div class="h-5 w-px bg-gold/40 hidden md:block"></div>
         </div>
         <div class="md:col-span-1 flex flex-col items-center">
-          <div class="rounded-2xl border-2 border-gold/60 bg-cream px-4 py-4 w-full"><div class="text-gold-deep text-[10px] uppercase tracking-widest">Nivell 4</div><div class="font-bold text-night mt-1">Els fluxos</div><div class="text-ink/55 text-xs">n8n · crons · eines</div></div>
+          <div class="rounded-2xl border-2 border-gold/60 bg-cream px-4 py-4 w-full"><div class="text-gold-deep text-[10px] uppercase tracking-widest">Nivell 4</div><div class="font-bold text-night mt-1">Els fluxos</div><div class="text-ink/55 text-xs">feines automàtiques · eines</div></div>
         </div>
       </div>
     </div>
@@ -579,17 +583,17 @@ tailwind.config = {
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
           <div class="flex items-center gap-2"><span class="spark-dot" style="background:#7BBF6A"></span><div class="font-bold text-lg">Llegeix</div></div>
           <p class="text-white/60 text-sm mt-2">Pot consultar dades i estat. No toca res.</p>
-          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">autoritat: read</div>
+          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">només llegeix · no toca res</div>
         </div>
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
           <div class="flex items-center gap-2"><span class="spark-dot" style="background:#E7C47D"></span><div class="font-bold text-lg">Executa</div></div>
           <p class="text-white/60 text-sm mt-2">Pot produir i operar dins les seves regles, sense sortir-se'n.</p>
-          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">autoritat: read,auto</div>
+          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">només llegeix · no toca res,auto</div>
         </div>
         <div class="rounded-2xl border border-gold/50 bg-white/5 p-6">
           <div class="flex items-center gap-2"><span class="spark-dot" style="background:#E54B5B"></span><div class="font-bold text-lg">Aprova</div></div>
           <p class="text-white/60 text-sm mt-2">Accions sensibles que requereixen permís explícit d'un nivell superior.</p>
-          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">autoritat: approval</div>
+          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">necessita el teu permís</div>
         </div>
       </div>
 
@@ -614,7 +618,7 @@ tailwind.config = {
     <div class="mt-8 rounded-3xl border border-silver bg-white p-8 md:p-10 fade-in">
       <div class="text-gold-deep text-xs font-bold tracking-widest uppercase">Tot controlat</div>
       <h3 class="font-display text-2xl font-bold text-night mt-1">I si un flux se'n va de les mans? El frenes.</h3>
-      <p class="mt-2 text-ink/60 text-sm">Cada flux té un interruptor de seguretat (kill-switch) i un registre d'auditoria. Des d'un sol panell ho veus tot i pots aturar-ho tot.</p>
+      <p class="mt-2 text-ink/60 text-sm">Cada flux té un interruptor de seguretat i un registre d'activitat. Des d'un sol panell ho veus tot i pots aturar-ho tot.</p>
       <div class="mt-8 grid md:grid-cols-3 gap-5">
         <div class="rounded-2xl bg-cream border border-silver p-5">
           <div class="flex items-center gap-2"><span class="spark-dot pulse-dot" style="background:#E7C47D"></span><div class="font-bold text-night">Interruptor de seguretat</div></div>
@@ -690,10 +694,10 @@ tailwind.config = {
         </g>
         <!-- Fluxos -->
         <rect x="160" y="400" width="180" height="48" rx="10" fill="#E7C47D"/>
-        <text x="250" y="422" fill="#0B1D32" font-size="12" text-anchor="middle" font-weight="700">⚡ Fluxos n8n</text>
+        <text x="250" y="422" fill="#0B1D32" font-size="12" text-anchor="middle" font-weight="700">⚡ Fluxos automàtics</text>
         <text x="250" y="438" fill="#0B1D3288" font-size="9" text-anchor="middle">automatitzacions</text>
         <rect x="500" y="400" width="180" height="48" rx="10" fill="#E7C47D"/>
-        <text x="590" y="422" fill="#0B1D32" font-size="12" text-anchor="middle" font-weight="700">⚡ Rutines &amp; crons</text>
+        <text x="590" y="422" fill="#0B1D32" font-size="12" text-anchor="middle" font-weight="700">⚡ Rutines programades</text>
         <text x="590" y="438" fill="#0B1D3288" font-size="9" text-anchor="middle">treball que es repeteix</text>
       </svg>
       <p class="text-white/40 text-xs mt-2">Les línies il·lustren com baixa l'ordre i com puja l'evidència. Tot passa pel vistiplau del CEO IA.</p>
@@ -701,62 +705,61 @@ tailwind.config = {
 
     <!-- ================= ARQUITECTURA DE TENANTS (SVG animat) ================= -->
     <div class="mt-8 rounded-3xl border border-white/10 bg-black/30 p-6 md:p-8 fade-in">
-      <div class="text-gold text-xs font-bold tracking-widest uppercase mb-2">Gràfic 2 · L'arquitectura de tenants</div>
-      <h3 class="font-display text-2xl font-bold text-white mb-6">Un client, un sistema aïllat.</h3>
-      <svg viewBox="0 0 840 420" class="w-full h-auto" role="img" aria-label="Arquitectura de tenants del Business AI OS">
-        <!-- línies de flux -->
+      <div class="text-gold text-xs font-bold tracking-widest uppercase mb-2">Gràfic 2 · Com s'organitza cada client</div>
+      <h3 class="font-display text-2xl font-bold text-white mb-6">Cada client, el seu espai segur.</h3>
+      <svg viewBox="0 0 840 420" class="w-full h-auto" role="img" aria-label="Com s'organitza el sistema de cada client">
         <g stroke="#E7C47D" stroke-width="1.5" fill="none" class="flujo">
           <path d="M420 68 L420 108 M420 150 L420 168 M200 280 L140 300 M420 280 L420 300 M640 280 L700 300"/>
         </g>
-        <!-- Control plane -->
+        <!-- La teva central -->
         <rect x="300" y="20" width="240" height="50" rx="12" fill="#E7C47D"/>
-        <text x="420" y="42" fill="#0B1D32" font-size="12" text-anchor="middle" font-weight="700">CONTROL PLANE</text>
-        <text x="420" y="60" fill="#0B1D3288" font-size="9" text-anchor="middle">heartbeat · llicències · aprovacions</text>
-        <!-- Tenant 1 -->
+        <text x="420" y="42" fill="#0B1D32" font-size="12" text-anchor="middle" font-weight="700">LA TEVA CENTRAL</text>
+        <text x="420" y="60" fill="#0B1D3288" font-size="9" text-anchor="middle">ho veus i ho controles tot, des d'un sol lloc</text>
+        <!-- Client 1 -->
         <g>
           <rect x="70" y="180" width="260" height="110" rx="14" fill="#14243A" stroke="#E7C47D" stroke-width="1.5"/>
-          <text x="200" y="200" fill="#E7C47D" font-size="11" text-anchor="middle" font-weight="700">TENANT · Can Bonavista</text>
+          <text x="200" y="200" fill="#E7C47D" font-size="11" text-anchor="middle" font-weight="700">CAN BONAVISTA</text>
           <rect x="85" y="210" width="110" height="64" rx="8" fill="#0B1D32" stroke="#ffffff33"/>
-          <text x="140" y="235" fill="#fff" font-size="10" text-anchor="middle">App (erp+crm)</text>
-          <text x="140" y="252" fill="#ffffff77" font-size="8" text-anchor="middle">Next.js + Prisma</text>
+          <text x="140" y="233" fill="#fff" font-size="10" text-anchor="middle">El teu negoci</text>
+          <text x="140" y="252" fill="#ffffff77" font-size="8" text-anchor="middle">funciona sol</text>
           <rect x="205" y="210" width="110" height="64" rx="8" fill="#0B1D32" stroke="#E7C47D" stroke-width="1"/>
-          <text x="260" y="235" fill="#fff" font-size="10" text-anchor="middle">Postgres</text>
-          <text x="260" y="252" fill="#E7C47D" font-size="8" text-anchor="middle">només seva</text>
+          <text x="260" y="233" fill="#fff" font-size="10" text-anchor="middle">Les teves dades</text>
+          <text x="260" y="252" fill="#E7C47D" font-size="8" text-anchor="middle">només teves</text>
           <circle cx="312" cy="235" r="5" fill="#E7C47D" class="pulso"/>
-          <text x="200" y="282" fill="#7BBF6A" font-size="9" text-anchor="middle">● llicència ACTIVA</text>
+          <text x="200" y="282" fill="#7BBF6A" font-size="9" text-anchor="middle">● tot al dia</text>
         </g>
-        <!-- Tenant 2 -->
+        <!-- Client 2 -->
         <g>
           <rect x="290" y="180" width="260" height="110" rx="14" fill="#14243A" stroke="#E7C47D" stroke-width="1.5"/>
-          <text x="420" y="200" fill="#E7C47D" font-size="11" text-anchor="middle" font-weight="700">TENANT · SolutionPartner</text>
+          <text x="420" y="200" fill="#E7C47D" font-size="11" text-anchor="middle" font-weight="700">SOLUTIONPARTNER</text>
           <rect x="305" y="210" width="110" height="64" rx="8" fill="#0B1D32" stroke="#ffffff33"/>
-          <text x="360" y="235" fill="#fff" font-size="10" text-anchor="middle">App (erp+crm)</text>
-          <text x="360" y="252" fill="#ffffff77" font-size="8" text-anchor="middle">Next.js + Prisma</text>
+          <text x="360" y="233" fill="#fff" font-size="10" text-anchor="middle">El teu negoci</text>
+          <text x="360" y="252" fill="#ffffff77" font-size="8" text-anchor="middle">funciona sol</text>
           <rect x="425" y="210" width="110" height="64" rx="8" fill="#0B1D32" stroke="#E7C47D" stroke-width="1"/>
-          <text x="480" y="235" fill="#fff" font-size="10" text-anchor="middle">Postgres</text>
-          <text x="480" y="252" fill="#E7C47D" font-size="8" text-anchor="middle">només seva</text>
+          <text x="480" y="233" fill="#fff" font-size="10" text-anchor="middle">Les teves dades</text>
+          <text x="480" y="252" fill="#E7C47D" font-size="8" text-anchor="middle">només teves</text>
           <circle cx="532" cy="235" r="5" fill="#E7C47D" class="pulso"/>
-          <text x="420" y="282" fill="#7BBF6A" font-size="9" text-anchor="middle">● llicència ACTIVA</text>
+          <text x="420" y="282" fill="#7BBF6A" font-size="9" text-anchor="middle">● tot al dia</text>
         </g>
-        <!-- Tenant 3 -->
+        <!-- Client 3 -->
         <g>
           <rect x="510" y="180" width="260" height="110" rx="14" fill="#14243A" stroke="#E7C47D" stroke-width="1.5"/>
-          <text x="640" y="200" fill="#E7C47D" font-size="11" text-anchor="middle" font-weight="700">TENANT · Brasserie</text>
+          <text x="640" y="200" fill="#E7C47D" font-size="11" text-anchor="middle" font-weight="700">BRASSERIE</text>
           <rect x="525" y="210" width="110" height="64" rx="8" fill="#0B1D32" stroke="#ffffff33"/>
-          <text x="580" y="235" fill="#fff" font-size="10" text-anchor="middle">App (erp)</text>
-          <text x="580" y="252" fill="#ffffff77" font-size="8" text-anchor="middle">Next.js + Prisma</text>
+          <text x="580" y="233" fill="#fff" font-size="10" text-anchor="middle">El teu negoci</text>
+          <text x="580" y="252" fill="#ffffff77" font-size="8" text-anchor="middle">funciona sol</text>
           <rect x="645" y="210" width="110" height="64" rx="8" fill="#0B1D32" stroke="#E7C47D" stroke-width="1"/>
-          <text x="700" y="235" fill="#fff" font-size="10" text-anchor="middle">Postgres</text>
-          <text x="700" y="252" fill="#E7C47D" font-size="8" text-anchor="middle">només seva</text>
+          <text x="700" y="233" fill="#fff" font-size="10" text-anchor="middle">Les teves dades</text>
+          <text x="700" y="252" fill="#E7C47D" font-size="8" text-anchor="middle">només teves</text>
           <circle cx="752" cy="235" r="5" fill="#E54B5B" class="pulso"/>
-          <text x="640" y="282" fill="#E54B5B" font-size="9" text-anchor="middle">● llicència en avís</text>
+          <text x="640" y="282" fill="#E54B5B" font-size="9" text-anchor="middle">● recordatori de pagament</text>
         </g>
-        <!-- Vigia -->
+        <!-- La seguretat -->
         <rect x="290" y="360" width="260" height="44" rx="12" fill="#0B1D32" stroke="#E54B5B88" stroke-width="1"/>
-        <text x="420" y="380" fill="#E54B5B" font-size="11" text-anchor="middle" font-weight="700">VIGIA · kill-switch</text>
-        <text x="420" y="395" fill="#ffffff88" font-size="9" text-anchor="middle">si no es paga, s'atura el flux</text>
+        <text x="420" y="380" fill="#E54B5B" font-size="11" text-anchor="middle" font-weight="700">LA SEGURETAT</text>
+        <text x="420" y="395" fill="#ffffff88" font-size="9" text-anchor="middle">si no es renova un servei, només es fa una pausa</text>
       </svg>
-      <p class="text-white/40 text-xs mt-2">Cada client és un docker aïllat amb la seva Postgres. Si una llicència no es renova, el kill-switch apaga només el seu sistema.</p>
+      <p class="text-white/40 text-xs mt-2">Cada client té el seu espai separat i les seves dades protegides. Si un servei no es renova, només es posa en pausa el d'aquell client, sense afectar els altres.</p>
     </div>
   </div>
 </section>
@@ -765,7 +768,7 @@ tailwind.config = {
 <section id="fases" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-2xl fade-in">
-      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">09 · Amb tu</span>
+      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">08 · Amb tu</span>
       <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold text-night">Com construïm el teu AIOS.</h2>
     </div>
     <div class="mt-12 grid md:grid-cols-2 gap-5">
@@ -783,7 +786,7 @@ tailwind.config = {
       </div>
       <div class="fade-in rounded-2xl border border-silver bg-cream p-7 flex gap-5">
         <div class="text-gold-deep font-display text-4xl font-extrabold shrink-0">4</div>
-        <div><h3 class="font-bold text-night text-xl">Rutines</h3><p class="mt-2 text-ink/65 text-sm">Activem crons i agents que treballen sols, i els mantenim i millorem mes a mes.</p></div>
+        <div><h3 class="font-bold text-night text-xl">Rutines</h3><p class="mt-2 text-ink/65 text-sm">Activem processos i assistents automàtics que treballen sols, i els mantenim i millorem mes a mes.</p></div>
       </div>
     </div>
   </div>
