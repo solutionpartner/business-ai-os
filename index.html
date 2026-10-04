@@ -66,6 +66,7 @@ tailwind.config = {
       <a href="#nivells" class="hover:text-gold transition">Nivells</a>
       <a href="#connexions" class="hover:text-gold transition">Connexions</a>
       <a href="#govern" class="hover:text-gold transition">Govern</a>
+      <a href="#politiques" class="hover:text-gold transition">Permisos</a>
     </div>
     <a href="#cta" class="inline-flex items-center gap-2 rounded-lg bg-gold text-night text-sm font-bold px-4 py-2 hover:bg-gold-deep transition">
       Diagnòstic gratuït
@@ -494,11 +495,114 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ═══════════ 07 AMB TU / FASES ═══════════ -->
+<!-- ═══════════ 07 POLÍTIQUES I PERMISOS ═══════════ -->
+<section id="politiques" class="py-24 bg-cream">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto fade-in">
+      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">07 · Polítiques i permisos</span>
+      <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold text-night">Qui pot què. I què queda al seu lloc.</h2>
+      <p class="mt-4 text-ink/70 text-lg">Cada agent té una autoritat mesurada: què pot fer sol, què ha de consultar i què mai no pot fer. El teu AIOS no improvisa, obeeix les teves regles.</p>
+    </div>
+
+    <!-- QUI MANA: piràmide de rols -->
+    <div class="mt-14 rounded-3xl border border-silver bg-white p-8 md:p-10 fade-in">
+      <div class="text-gold-deep text-xs font-bold tracking-widest uppercase">Els nivells de comandament</div>
+      <h3 class="font-display text-2xl font-bold text-night mt-1">Qui mana a qui.</h3>
+      <p class="mt-2 text-ink/60 text-sm">Com més amunt, més permisos. Cada nivell pot supervisar i aprovar el que fan els de sota, mai al revés.</p>
+
+      <!-- arbre de comandament -->
+      <div class="mt-8 grid md:grid-cols-5 gap-4 text-center items-start">
+        <div class="md:col-span-1 flex flex-col items-center">
+          <div class="rounded-2xl bg-night text-white px-4 py-4 w-full shadow-lg ring-1 ring-gold/50"><div class="text-gold text-[10px] uppercase tracking-widest">Nivell 0</div><div class="font-bold mt-1">La propietat</div><div class="text-white/55 text-xs">Tú · l'ordinador final</div></div>
+          <div class="h-5 w-px bg-gold/40 hidden md:block"></div>
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center">
+          <div class="rounded-2xl bg-ink text-white px-4 py-4 w-full shadow-md"><div class="text-gold text-[10px] uppercase tracking-widest">Nivell 1</div><div class="font-bold mt-1">El supervisor</div><div class="text-white/55 text-xs">OptimusPrime</div></div>
+          <div class="h-5 w-px bg-gold/40 hidden md:block"></div>
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center">
+          <div class="rounded-2xl bg-night text-white px-4 py-4 w-full shadow-md"><div class="text-gold text-[10px] uppercase tracking-widest">Nivell 2</div><div class="font-bold mt-1">Els caps per àrea</div><div class="text-white/55 text-xs">Argon · CEO IA</div></div>
+          <div class="h-5 w-px bg-gold/40 hidden md:block"></div>
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center">
+          <div class="rounded-2xl bg-ink text-white px-4 py-4 w-full shadow-md"><div class="text-gold text-[10px] uppercase tracking-widest">Nivell 3</div><div class="font-bold mt-1">Els agents</div><div class="text-white/55 text-xs">Executors</div></div>
+          <div class="h-5 w-px bg-gold/40 hidden md:block"></div>
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center">
+          <div class="rounded-2xl border-2 border-gold/60 bg-cream px-4 py-4 w-full"><div class="text-gold-deep text-[10px] uppercase tracking-widest">Nivell 4</div><div class="font-bold text-night mt-1">Els fluxos</div><div class="text-ink/55 text-xs">n8n · crons · eines</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELS RAILS: tres nivells d'autoritat -->
+    <div class="mt-8 rounded-3xl bg-night p-8 md:p-10 text-white fade-in">
+      <div class="text-gold text-xs font-bold tracking-widest uppercase">Els rails</div>
+      <h3 class="font-display text-2xl font-bold mt-1">Cada agent, al seu carril.</h3>
+      <p class="mt-2 text-white/60 text-sm">Tres nivells d'autoritat. Cap acció no surt mai del seu carril.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
+          <div class="flex items-center gap-2"><span class="spark-dot" style="background:#7BBF6A"></span><div class="font-bold text-lg">Llegeix</div></div>
+          <p class="text-white/60 text-sm mt-2">Pot consultar dades i estat. No toca res.</p>
+          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">autoritat: read</div>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
+          <div class="flex items-center gap-2"><span class="spark-dot" style="background:#E7C47D"></span><div class="font-bold text-lg">Executa</div></div>
+          <p class="text-white/60 text-sm mt-2">Pot produir i operar dins les seves regles, sense sortir-se'n.</p>
+          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">autoritat: read,auto</div>
+        </div>
+        <div class="rounded-2xl border border-gold/50 bg-white/5 p-6">
+          <div class="flex items-center gap-2"><span class="spark-dot" style="background:#E54B5B"></span><div class="font-bold text-lg">Aprova</div></div>
+          <p class="text-white/60 text-sm mt-2">Accions sensibles que requereixen permís explícit d'un nivell superior.</p>
+          <div class="mt-4 rounded-lg bg-black/20 border border-white/10 px-3 py-2 font-mono text-xs text-white/70">autoritat: approval</div>
+        </div>
+      </div>
+
+      <!-- taula qui pot què -->
+      <div class="mt-8 rounded-2xl border border-white/10 bg-black/20 overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead><tr class="text-white/50 text-xs uppercase border-b border-white/10">
+            <th class="px-4 py-3">Nivell</th><th class="px-4 py-3">Llegeix</th><th class="px-4 py-3">Executa</th><th class="px-4 py-3">Aprova</th>
+          </tr></thead>
+          <tbody class="text-white/80">
+            <tr class="border-b border-white/5"><td class="px-4 py-3 font-medium text-white">Propietat · tu</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-gold">✓ definitiu</td></tr>
+            <tr class="border-b border-white/5"><td class="px-4 py-3 font-medium text-white">Supervisor · Optimus</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-gold">✓</td></tr>
+            <tr class="border-b border-white/5"><td class="px-4 py-3 font-medium text-white">Caps · Argon</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-gold">auto</td><td class="px-4 py-3 text-white/40">segons regla</td></tr>
+            <tr class="border-b border-white/5"><td class="px-4 py-3 font-medium text-white">Agents · executors</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-white/70">auto · limitat</td><td class="px-4 py-3 text-white/30">—</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-white">Fluxos · eines</td><td class="px-4 py-3 text-green-300">✓</td><td class="px-4 py-3 text-white/70">només rutina</td><td class="px-4 py-3 text-white/30">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TOT CONTROLAT: kill-switch + audit -->
+    <div class="mt-8 rounded-3xl border border-silver bg-white p-8 md:p-10 fade-in">
+      <div class="text-gold-deep text-xs font-bold tracking-widest uppercase">Tot controlat</div>
+      <h3 class="font-display text-2xl font-bold text-night mt-1">I si un flux se'n va de les mans? El frenes.</h3>
+      <p class="mt-2 text-ink/60 text-sm">Cada flux té un interruptor de seguretat (kill-switch) i un registre d'auditoria. Des d'un sol panell ho veus tot i pots aturar-ho tot.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl bg-cream border border-silver p-5">
+          <div class="flex items-center gap-2"><span class="spark-dot pulse-dot" style="background:#E7C47D"></span><div class="font-bold text-night">Interruptor de seguretat</div></div>
+          <div class="mt-3 flex items-center justify-center"><div class="inline-flex items-center gap-1 rounded-full bg-red-50 border border-red-200 px-3 py-1 text-xs text-red-600 font-semibold"><span class="spark-dot" style="background:#E54B5B"></span> Armats · 5 fluxos</div></div>
+          <p class="text-ink/55 text-xs mt-3 text-center">Un botó atura qualsevol flux, de seguida.</p>
+        </div>
+        <div class="rounded-2xl bg-cream border border-silver p-5">
+          <div class="flex items-center gap-2"><span class="spark-dot" style="background:#7BBF6A"></span><div class="font-bold text-night">Registre d'auditoria</div></div>
+          <p class="text-ink/55 text-xs mt-3">Cada acció queda registrada: qui, què, quan i quina aprovació la va autoritzar.</p>
+        </div>
+        <div class="rounded-2xl bg-night text-white p-5 shadow-xl">
+          <div class="flex items-center gap-2"><span class="spark-dot pulse-dot" style="background:#E7C47D"></span><div class="font-bold">Un sol panell</div></div>
+          <p class="text-white/55 text-xs mt-3">Tots els fluxos, tots els permisos, tots els registres. Tu hi manes, ells obeeixen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 08 AMB TU / FASES ═══════════ -->
 <section id="fases" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-2xl fade-in">
-      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">07 · Amb tu</span>
+      <span class="text-gold-deep text-sm font-bold tracking-widest uppercase">08 · Amb tu</span>
       <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold text-night">Com construïm el teu AIOS.</h2>
     </div>
     <div class="mt-12 grid md:grid-cols-2 gap-5">
