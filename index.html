@@ -593,9 +593,15 @@ tailwind.config = {
 
     <!-- ELS RAILS: tres nivells d'autoritat -->
     <div class="mt-8 rounded-3xl bg-night p-8 md:p-10 text-white fade-in">
-      <div class="text-gold text-xs font-bold tracking-widest uppercase">Els rails</div>
-      <h3 class="font-display text-2xl font-bold mt-1">Cada agent, al seu carril.</h3>
-      <p class="mt-2 text-white/60 text-sm">Tres nivells d'autoritat. Cap acció no surt mai del seu carril.</p>
+      <div class="relative overflow-hidden rounded-2xl">
+        <img src="agent-carril-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center" style="z-index:0;opacity:.5">
+        <div class="absolute inset-0" style="z-index:0;background:rgba(11,29,50,.45)"></div>
+        <div class="relative" style="z-index:1">
+          <div class="text-gold text-xs font-bold tracking-widest uppercase">Els rails</div>
+          <h3 class="font-display text-2xl font-bold mt-1">Cada agent, al seu carril.</h3>
+          <p class="mt-2 text-white/60 text-sm">Tres nivells d'autoritat. Cap acció no surt mai del seu carril.</p>
+        </div>
+      </div>
       <div class="mt-8 grid md:grid-cols-3 gap-5">
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
           <div class="flex items-center gap-2"><span class="spark-dot" style="background:#7BBF6A"></span><div class="font-bold text-lg">Llegeix</div></div>
