@@ -91,6 +91,9 @@ tailwind.config = {
 
 <!-- ═══════════ HERO ═══════════ -->
 <header class="relative min-h-screen flex items-center bg-night overflow-hidden">
+  <!-- imatge de fons (convenció: cover + 0.5 + capa fosca) -->
+  <img src="hero-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center" style="z-index:0;opacity:.5">
+  <div class="absolute inset-0" style="z-index:0;background:rgba(11,29,50,.5)"></div>
   <!-- fons decoratiu -->
   <div class="absolute inset-0 opacity-40" style="background:
     radial-gradient(60% 50% at 80% 15%, rgba(231,196,125,0.22), transparent 60%),
