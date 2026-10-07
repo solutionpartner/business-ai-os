@@ -1046,37 +1046,37 @@ const meteo = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.gauge-outer, .lg\\:col-span-2.grid').forEach(el=>meteo.observe(el));
 </script>
 <!-- ═══ toggle idiomes · CA/ES/EN ═══ -->
-<div id="langbar" style="position:fixed;top:14px;right:14px;z-index:9999;display:flex;gap:4px;background:#0B1D32;border:1px solid #E7C47D;border-radius:999px;padding:5px 8px;box-shadow:0 6px 20px rgba(0,0,0,.35)"><button data-lang="ca" style="border:0;border-radius:999px;padding:3px 12px;font:700 12px/1 Space Grotesk,Segoe UI;cursor:pointer;background:#E7C47D;color:#0B1D32">CA</button><button data-lang="es" style="border:0;border-radius:999px;padding:3px 12px;font:700 12px/1 Space Grotesk,Segoe UI;cursor:pointer;background:transparent;color:#E7C47D">ES</button><button data-lang="en" style="border:0;border-radius:999px;padding:3px 12px;font:700 12px/1 Space Grotesk,Segoe UI;cursor:pointer;background:transparent;color:#E7C47D">EN</button></div>
+<div id="langbar" style="position:fixed;top:78px;right:14px;z-index:3000;display:flex;gap:4px;background:#0B1D32;border:1px solid #E7C47D;border-radius:999px;padding:5px 8px;box-shadow:0 6px 20px rgba(0,0,0,.35)"><button data-lang="ca" style="border:0;border-radius:999px;padding:3px 12px;font:700 12px/1 Space Grotesk,Segoe UI;cursor:pointer;background:#E7C47D;color:#0B1D32">CA</button><button data-lang="es" style="border:0;border-radius:999px;padding:3px 12px;font:700 12px/1 Space Grotesk,Segoe UI;cursor:pointer;background:transparent;color:#E7C47D">ES</button><button data-lang="en" style="border:0;border-radius:999px;padding:3px 12px;font:700 12px/1 Space Grotesk,Segoe UI;cursor:pointer;background:transparent;color:#E7C47D">EN</button></div>
 <script>
 (function(){
 var D={
-  "El mètode":["El método","The method"]
-  "01 · Àrees":["01 · Áreas","01 · Areas"]
-  "02 · L'AIOS":["02 · El AIOS","02 · The AIOS"]
-  "03 · Processos":["03 · Procesos","03 · Processes"]
-  "04 · Nivells":["04 · Niveles","04 · Levels"]
-  "05 · Connexions":["05 · Conexiones","05 · Connections"]
-  "06 · Govern":["06 · Gobierno","06 · Governance"]
-  "07 · Polítiques i permisos":["07 · Políticas y permisos","07 · Policies & permissions"]
-  "08 · Arquitectura":["08 · Arquitectura","08 · Architecture"]
-  "09 · Amb tu":["09 · Contigo","09 · With you"]
-  "10 · A mida":["10 · A medida","10 · Tailored"]
-  "Comença pel nivell u":["Empieza por el nivel uno","Start at level one"]
-  "Sis passos perquè el teu negoci":["Seis pasos para que tu negocio","Six steps for your business"]
-  "Tot negoci es sosté sobre quatre àrees.":["Todo negocio se sostiene sobre cuatro áreas.","Every business rests on four areas."]
-  "No és un panell. És una conversa.":["No es un panel. Es una conversación.","It's not a dashboard. It's a conversation."]
-  "El teu negoci, ben organitzat.":["Tu negocio, bien organizado.","Your business, well organised."]
-  "Tres nivells d'automatització.":["Tres niveles de automatización.","Three levels of automation."]
-  "No canvies d'eines.":["No cambies de herramientas.","Don't change your tools."]
-  "Qui controla el teu AIOS.":["Quién controla tu AIOS.","Who controls your AIOS."]
-  "Qui pot què. I què queda al seu lloc.":["Quién puede qué. Y qué queda en su sitio.","Who can do what. And what stays put."]
-  "Com s'organitza per dins.":["Cómo se organiza por dentro.","How it's organised inside."]
-  "Com construïm el teu AIOS.":["Cómo construimos tu AIOS.","How we build your AIOS."]
-  "Cada negoci és diferent.":["Cada negocio es diferente.","Every business is different."]
-  "Posa el teu negoci en pilot automàtic.":["Pon tu negocio en piloto automático.","Put your business on autopilot."]
-  "Diagnòstic":["Diagnóstico","Diagnosis"]
-  "Vull el meu AIOS →":["Quiero mi AIOS →","I want my AIOS →"]
-  "Omple les dades per a un diagnòstic →":["Rellena los datos para un diagnóstico →","Fill in your data for a diagnosis →"]
+  "El mètode":["El método","The method"],
+  "01 · Àrees":["01 · Áreas","01 · Areas"],
+  "02 · L'AIOS":["02 · El AIOS","02 · The AIOS"],
+  "03 · Processos":["03 · Procesos","03 · Processes"],
+  "04 · Nivells":["04 · Niveles","04 · Levels"],
+  "05 · Connexions":["05 · Conexiones","05 · Connections"],
+  "06 · Govern":["06 · Gobierno","06 · Governance"],
+  "07 · Polítiques i permisos":["07 · Políticas y permisos","07 · Policies & permissions"],
+  "08 · Arquitectura":["08 · Arquitectura","08 · Architecture"],
+  "09 · Amb tu":["09 · Contigo","09 · With you"],
+  "10 · A mida":["10 · A medida","10 · Tailored"],
+  "Comença pel nivell u":["Empieza por el nivel uno","Start at level one"],
+  "Sis passos perquè el teu negoci":["Seis pasos para que tu negocio","Six steps for your business"],
+  "Tot negoci es sosté sobre quatre àrees.":["Todo negocio se sostiene sobre cuatro áreas.","Every business rests on four areas."],
+  "No és un panell. És una conversa.":["No es un panel. Es una conversación.","It's not a dashboard. It's a conversation."],
+  "El teu negoci, ben organitzat.":["Tu negocio, bien organizado.","Your business, well organised."],
+  "Tres nivells d'automatització.":["Tres niveles de automatización.","Three levels of automation."],
+  "No canvies d'eines.":["No cambies de herramientas.","Don't change your tools."],
+  "Qui controla el teu AIOS.":["Quién controla tu AIOS.","Who controls your AIOS."],
+  "Qui pot què. I què queda al seu lloc.":["Quién puede qué. Y qué queda en su sitio.","Who can do what. And what stays put."],
+  "Com s'organitza per dins.":["Cómo se organiza por dentro.","How it's organised inside."],
+  "Com construïm el teu AIOS.":["Cómo construimos tu AIOS.","How we build your AIOS."],
+  "Cada negoci és diferent.":["Cada negocio es diferente.","Every business is different."],
+  "Posa el teu negoci en pilot automàtic.":["Pon tu negocio en piloto automático.","Put your business on autopilot."],
+  "Diagnòstic":["Diagnóstico","Diagnosis"],
+  "Vull el meu AIOS →":["Quiero mi AIOS →","I want my AIOS →"],
+  "Omple les dades per a un diagnòstic →":["Rellena los datos para un diagnóstico →","Fill in your data for a diagnosis →"],
   "El teu AIOS s'endolla al teu sistema habitual, el de sempre.":["Tu AIOS se conecta a tu sistema habitual, el de siempre.","Your AIOS plugs into the system you already use, the one you've always had."]
 };
 var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
