@@ -1088,7 +1088,7 @@ function apply(l){
   document.querySelectorAll('#langbar button').forEach(function(b){var on=b.dataset.lang===l;b.style.background=on?'#E7C47D':'transparent';b.style.color=on?'#0B1D32':'#E7C47D';});
   var dict={ca:{},es:{},en:{}};Object.keys(D).forEach(function(k){dict.ca[k]=k;dict.es[k]=D[k][0];dict.en[k]=D[k][1];});
   var tr=dict[l]||{};
-  nodes.forEach(function(n,i){var v=orig[i];Object.keys(tr).forEach(function(k){if(tr[k]&&v.indexOf(k)!==-1)v=v.split(k).join(tr[k]);});n.nodeValue=v;});
+  nodes.forEach(function(n,i){var v=orig[i];var kk=Object.keys(tr).sort(function(a,b){return b.length-a.length;});kk.forEach(function(k){if(tr[k]&&v.indexOf(k)!==-1)v=v.split(k).join(tr[k]);});n.nodeValue=v;});
 }
 document.querySelectorAll('#langbar button').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.lang);});});
 })();
